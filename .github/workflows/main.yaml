@@ -23,3 +23,62 @@ jobs:
         run: railway up
         env:
           RAILWAY_TOKEN: ${{ secrets.deploytoken }}
+
+# aa
+  payload: |
+  {
+    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url}}",
+    "blocks": [  {
+            "type": "header",
+            "text": {
+                  "type": "plain_text",
+                  "text": "DipSA55 CI/CD Assignment Submission",
+                  "emoji": true
+                  }
+     },
+     {
+         "type": "section",
+         "fields": [  {
+                  "type": "mrkdwn",
+                  "text": "*Name:*\n"
+                 },
+                 {
+                  "type": "mrkdwn",
+                  "text": "*Metriculation:*\n"
+                  }
+                  ]
+     },
+     {
+         "type": "section",
+         "fields": [  {
+                 "type": "mrdwn",
+                 "text": "*Email:*\n"
+                 },
+                 {
+                 "type": "mrkdwn"
+                 "text": "Repositary:*\n"
+                 }
+                 ]
+      },
+      {
+         "type": "section",
+         "fields": [  {
+                 "type": "mrkdwn",
+                 "text": "*Deployment:*\n"
+                 }
+             ]
+       },
+        {
+         "type": "section",
+         "fields": [  {
+                 "type": "mrkdwn",
+                 "text": ""
+                 }
+             ]
+       }
+     ]
+   }
+env:
+SLACK_WEBHOOK_URL: ${{secrests.s}}
+SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+                 
