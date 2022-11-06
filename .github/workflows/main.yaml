@@ -5,8 +5,9 @@ on:
   branches: "v[0-9]+.[0-9]"  
 
 jobs:
+  railwaybd:
   build:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     
     steps:
     - name: Chechout
