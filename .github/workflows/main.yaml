@@ -22,7 +22,7 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.REPOTOKEN }}
-          tag: v
+          tag: ver-${{ github.sha }}
             
       - name: Deploy
         run: railway up
