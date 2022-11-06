@@ -24,7 +24,7 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.deploytoken }}
       
-      - name: hihihi
+      - name: notify
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
@@ -48,4 +48,5 @@ jobs:
               ]
             }
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.TESTWEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.TESTWEBHOOK }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
