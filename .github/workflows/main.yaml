@@ -1,4 +1,4 @@
-name: Deploy to Railway
+name: Workshopbyzcl
 
 on:
   push:
@@ -18,6 +18,12 @@ jobs:
  
       - name: Install Railway
         run: npm i -g @railway/cli
+        
+      - uses: ncipollo/release-action@v1
+        with:
+          bodyFile: "body.md"
+          name: versioninfo
+          token: ${{ secrets.REPOTOKEN }}
 
       - name: Deploy
         run: railway up
@@ -28,8 +34,6 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
-    # The following message update step does not accept a channel name.
-    # Setting a channel ID here for consistency is highly recommended.
           payload: |
             {
               "blocks": [
