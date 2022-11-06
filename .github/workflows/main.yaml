@@ -89,5 +89,5 @@ jobs:
               ]
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.TESTWEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SUBMITWEBHOOK }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
