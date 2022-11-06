@@ -32,19 +32,57 @@ jobs:
     # Setting a channel ID here for consistency is highly recommended.
           payload: |
             {
-              "text": "Deployment started (In Progress)",
-              "attachments": [
+              "blocks": [
                 {
-                  "pretext": "Deployment started",
-                  "color": "dbab09",
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "DipSA55 CI/CD Assignment Submission",
+                    "emoji": true
+                  }
+                },
+                {
+                  "type": "section",
                   "fields": [
                     {
-                      "title": "Status",
-                      "short": true,
-                      "value": "In Progress"
+                      "type": "mrkdwn",
+                      "text": "*Name:*\nZhang Cailei"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Metriculation:*\nA0265072H"
                     }
                   ]
-                 }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Email:*\n<gmail.com|zcl7355608@gmail.com>"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repositary:*\n<git://github.com/Zzzdaydayup/caworkshop.git>"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Deployment:*\n<https://caworkshop-production.up.railway.app>"
+                    }
+                  ]
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "<https://caworkshop-production.up.railway.app|Open Application>"
+                  }
+                }
               ]
             }
         env:
