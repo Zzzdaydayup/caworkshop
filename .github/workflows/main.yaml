@@ -3,7 +3,6 @@ name: Workshopbyzcl
 on:
   push:
     branches: "v[0-9]+.[0-9]"
-  create:
 
 jobs:
   deploy:
