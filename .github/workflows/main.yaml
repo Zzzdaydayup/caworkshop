@@ -23,62 +23,29 @@ jobs:
         run: railway up
         env:
           RAILWAY_TOKEN: ${{ secrets.deploytoken }}
-
-# aa
-  payload: |
-  {
-    "text": "GitHub Action build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url}}",
-    "blocks": [  {
-            "type": "header",
-            "text": {
-                  "type": "plain_text",
-                  "text": "DipSA55 CI/CD Assignment Submission",
-                  "emoji": true
-                  }
-     },
-     {
-         "type": "section",
-         "fields": [  {
-                  "type": "mrkdwn",
-                  "text": "*Name:*\n"
-                 },
-                 {
-                  "type": "mrkdwn",
-                  "text": "*Metriculation:*\n"
-                  }
+      
+      - name: hihihi
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+    # The following message update step does not accept a channel name.
+    # Setting a channel ID here for consistency is highly recommended.
+          payload: |
+            {
+              "text": "Deployment started (In Progress)",
+              "attachments": [
+                {
+                  "pretext": "Deployment started",
+                  "color": "dbab09",
+                  "fields": [
+                    {
+                      "title": "Status",
+                      "short": true,
+                      "value": "In Progress"
+                    }
                   ]
-     },
-     {
-         "type": "section",
-         "fields": [  {
-                 "type": "mrdwn",
-                 "text": "*Email:*\n"
-                 },
-                 {
-                 "type": "mrkdwn"
-                 "text": "Repositary:*\n"
                  }
-                 ]
-      },
-      {
-         "type": "section",
-         "fields": [  {
-                 "type": "mrkdwn",
-                 "text": "*Deployment:*\n"
-                 }
-             ]
-       },
-        {
-         "type": "section",
-         "fields": [  {
-                 "type": "mrkdwn",
-                 "text": ""
-                 }
-             ]
-       }
-     ]
-   }
-env:
-SLACK_WEBHOOK_URL: ${{secrests.s}}
-SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-                 
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.TESTWEBHOOK }}
