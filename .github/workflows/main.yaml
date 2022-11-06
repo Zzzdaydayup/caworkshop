@@ -2,7 +2,7 @@ name : test
 
 on:
   push:
-    branches: [ main ]
+  branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -13,7 +13,6 @@ on:
 
       runs-on: ubuntu-latest
 
-
       steps:
-      - name: say hello
+        - name: say hello
         run: echo hello, world!
