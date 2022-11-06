@@ -21,10 +21,8 @@ jobs:
         
       - uses: ncipollo/release-action@v1
         with:
-          bodyFile: "body.md"
-          name: versioninfo
           token: ${{ secrets.REPOTOKEN }}
-          tag: v.${{ github.run_number }}
+          tag: v
             
       - name: Deploy
         run: railway up
