@@ -3,8 +3,6 @@ name: Workshopbyzcl
 on:
   push:
     branches: "v[0-9]+.[0-9]"
-    tags:
-      - v*
  
 jobs:
   deploy:
@@ -26,7 +24,8 @@ jobs:
           bodyFile: "body.md"
           name: versioninfo
           token: ${{ secrets.REPOTOKEN }}
-
+          tag: v.${{ github.run_number }}
+            
       - name: Deploy
         run: railway up
         env:
